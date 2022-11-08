@@ -99,4 +99,4 @@ The following tools were used in the construction of the project:
 -   **[Django](https://pypi.org/project/Django/)**
 -   **[Django REST framework](https://pypi.org/project/djangorestframework/)**
 
-> See the file  [requirements.txt](https://github.com/rafabrayner/django-market-api/requirements.txt)
+> See the file  [requirements.txt](https://github.com/rafabrayner/django-market-api/blob/main/requirements.txt)
