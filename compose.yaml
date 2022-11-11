@@ -1,0 +1,41 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  web:
+    container_name: django_market_api
+    build:
+      context: .
+      dockerfile: ./docker/django/Dockerfile
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    environment:
+      - POSTGRES_DB=market
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres_market_db
+    image: postgres:15
+    restart: always
+    environment:
+      - POSTGRES_DB=market
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+    volumes:
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/10-init.sql
+      - ./data/db:/var/lib/postgresql/data
+
+  adminer:
+    container_name: adminer
+    image: adminer:4.8.1
+    restart: always
+    ports:
+      - 9090:8080
+  

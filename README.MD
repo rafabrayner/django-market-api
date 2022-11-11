@@ -50,6 +50,11 @@ You can install this with the following command:
 $ python3.11 -m pip install virtualenv
 ```
 
+If you are running in a Unix machine, you probably need to install python3-dev and libpq-dev for being able to run the ```psycopg2``` properly. You can install these packages with the following command:
+```bash
+$ sudo apt install python3.11-dev libpq-dev
+```
+
 In addition, it is good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/) or [PyCharm Community Edition](https://www.jetbrains.com/pycharm/)
 
 
